@@ -35,7 +35,8 @@ form.onsubmit = (event) => {
 // Função para converter a moeda.
 function convertCurrency(amount, price, symbol) {
   try {
-    description.textContent = `${symbol} 1 = ${price}`
+    // Exibindo a cotação da moeda selecionada.
+    description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`
 
     // Aplica a classe que exibe o footer para mostrar o resultado.
     footer.classList.add("show-result")
@@ -47,7 +48,16 @@ function convertCurrency(amount, price, symbol) {
   }
 }
 
-//
+// Formata a moeda em Real R$
+function formatCurrencyBRL(value) {
+  // Converte para número para utilizar o toLocaleString para formatar no padrão BRL
+  return Number(value).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  })
+}
+
+
 
 
 
