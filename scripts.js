@@ -35,14 +35,20 @@ form.onsubmit = (event) => {
 // Função para converter a moeda.
 function convertCurrency(amount, price, symbol) {
   try {
+    description.textContent = `${symbol} 1 = ${price}`
+
     // Aplica a classe que exibe o footer para mostrar o resultado.
     footer.classList.add("show-result")
+
   } catch (error) {
     // Remove a classe do footer removendo ele da tela.
     console.log(error)
     footer.classList.remove("show-result")
   }
 }
+
+//
+
 
 
 
